@@ -1,0 +1,10 @@
+{
+  "esy": {
+    "buildsInSource": true,
+    "build": [
+      "echo #{self.install}",
+      "gcc -o hello -D PATH='\"#{self.install}\"' hello.c"
+    ],
+    "install": "install -m u=rwx,g=rwx,o=rx hello $cur__install/bin/hello"
+  }
+}

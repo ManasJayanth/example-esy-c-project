@@ -1,0 +1,11 @@
+{
+  "//": "Example package.json file for out of source compilation",
+  "esy": {
+    "buildsInSource": true,
+    "build": [
+      "echo #{self.install}",
+      "gcc -o $cur__target_dir/hello -D PATH='\"#{self.install}\"' hello.c"
+    ],
+    "install": "install -m u=rwx,g=rwx,o=rx $cur__target_dir/hello $cur__install/bin/hello"
+  }
+}
